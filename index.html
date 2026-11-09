@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="logo">Jason Diaz</div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">My Skills</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-image">
+            <img src="jason.png" alt="Jason">
+        </div>
+
+        <div class="hero-text">
+            <h1>Hi! I'm Jason K. Diaz</h1>
+            <p>I'm an IT student in Metro Dumaguete College.</p>
+            <div class="line"></div>
+        </div>
+
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+
+        <div class="about-text">
+            <h2>About Me</h2>
+            <div class="line"></div>
+
+            <p>
+                I love spending my free time doing things that make me happy,
+                especially listening to music, playing games, and watching
+                romance anime. Music helps me relax and puts me in a good mood.
+                I also enjoy playing games when I want to have fun, challenge
+                myself, or simply pass the time.
+            </p>
+
+            <p>
+                When I want to relax, I enjoy watching romance anime because
+                I like the stories, characters, and sweet moments between them.
+                These hobbies make my free time more enjoyable and help me
+                feel relaxed and happy.
+            </p>
+        </div>
+
+        <div class="about-image">
+            <img src="diaz.png" alt="Jason's portrait">
+        </div>
+
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+
+        <h2>My Skills</h2>
+        <div class="line"></div>
+
+        <div class="skill-list">
+
+            <div class="skill-card">
+                <div class="skill-icon css-icon">3</div>
+                <h3>CSS</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon html-icon">5</div>
+                <h3>HTML</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon js-icon">JS</div>
+                <h3>JavaScript</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon python-icon">Py</div>
+                <h3>Python</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements" id="achievements">
+
+        <h2>Achievements</h2>
+        <div class="line"></div>
+
+        <div class="achievement-list">
+
+            <div class="achievement-card">
+                <img src="ml.png" alt="Mythical Immortal">
+                <h3>Mythical Immortal</h3>
+                <p>Mobile Legends</p>
+            </div>
+
+            <div class="achievement-card">
+                <img src="cod.png" alt="Top Rank Player">
+                <h3>Top Rank Player</h3>
+                <p>Mobile Legends</p>
+            </div>
+
+            <div class="achievement-card">
+                <img src="br.png" alt="Game Enthusiast">
+                <h3>Game Enthusiast</h3>
+                <p>Call of Duty / Other Games</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer class="contact" id="contact">
+
+        <div class="contact-info">
+            <h2>Contact</h2>
+            <div class="line"></div>
+
+            <p>
+                <strong>Email:</strong>
+                <a href="mailto:jasondiaz0803@gmail.com">
+                    jasondiaz0803@gmail.com
+                </a>
+            </p>
+
+            <p>
+                <strong>Phone Number:</strong>
+                <a href="tel:09677361873">09677361873</a>
+            </p>
+
+            <p><strong>Location:</strong> Dumaguete City</p>
+        </div>
+
+        <div class="social-info">
+            <h2>Follow Me</h2>
+
+            <div class="social-links">
+
+                <a href="https://www.instagram.com/"
+                   target="_blank" rel="noopener noreferrer">
+                    Instagram<br>@gyrozagoat
+                </a>
+
+                <a href="https://www.facebook.com/"
+                   target="_blank" rel="noopener noreferrer">
+                    Facebook<br>Jason Diaz
+                </a>
+
+                <a href="https://www.tiktok.com/"
+                   target="_blank" rel="noopener noreferrer">
+                    TikTok<br>@drizzydrake__1
+                </a>
+
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" type="button">
+        ↑
+    </button>
+
+    <!-- JavaScript Section -->
+    <script>
+
+        // Get navigation links and sections
+        const navLinks = document.querySelectorAll(".nav-links a");
+        const sections = document.querySelectorAll(
+            "section[id], footer[id]"
+        );
+
+        const backToTop = document.getElementById("backToTop");
+
+        // Highlight the active navigation link
+        function updateActiveLink() {
+
+            let currentSection = "home";
+
+            sections.forEach((section) => {
+
+                const sectionTop = section.offsetTop - 130;
+
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.id;
+                }
+
+            });
+
+            navLinks.forEach((link) => {
+
+                link.classList.toggle(
+                    "active",
+                    link.getAttribute("href") === "#" + currentSection
+                );
+
+            });
+
+            // Show button when scrolling down
+            backToTop.classList.toggle(
+                "show",
+                window.scrollY > 300
+            );
+
+        }
+
+        window.addEventListener("scroll", updateActiveLink);
+        window.addEventListener("load", updateActiveLink);
+
+        // Back to Top Button Function
+        backToTop.addEventListener("click", () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
