@@ -406,3 +406,28 @@ section {
         flex-wrap: wrap;
     }
 }
+
+/* MORE SPACING BETWEEN EACH SECTION */
+section {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+/* EXTRA SPACE FOR CONTACT SECTION */
+.contact {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+/* SPACING ON MOBILE */
+@media (max-width: 700px) {
+    section {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .contact {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
