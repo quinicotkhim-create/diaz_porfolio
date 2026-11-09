@@ -203,6 +203,31 @@ h2 {
     font-size: 18px;
 }
 
+/* SKILLS IMAGE */
+.skill-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 10px;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.skill-icon img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    transition: 0.3s ease;
+}
+
+.skill-icon img:hover {
+    transform: scale(1.15);
+}
+
+
 /* Achievements Section */
 .achievement-list {
     display: flex;
